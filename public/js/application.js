@@ -14,4 +14,18 @@ $(document).ready(function() {
     }
   });
 
+  $('.list-container').on('click', '#add-new-place', function(event) {
+    event.preventDefault();
+    $thisLink = $(this)
+    $thisLink.hide()
+
+    $.ajax({
+      method: "GET",
+      url: $thisLink.attr('href')
+    })
+    .done(function(response) {
+      $('.list-container').append(response)
+    })
+  });
+
 });

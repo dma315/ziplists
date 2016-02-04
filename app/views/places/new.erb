@@ -1,0 +1,24 @@
+<div id="new-place-container">
+  <div class="col-md-6">
+    <form action="/places" method="post">
+      <div class="input-group">
+        <input type="text" id="autocomplete" class="form-control" name="place[name]" aria-describedby="basic-addon2">
+        <span class="input-group-addon" id="basic-addon2">Search</span>
+      </div>
+      <div class="form-group">
+        <!-- <label for="comment">Comment:</label> -->
+        <textarea class="form-control" rows="4" id="comment" placeholder="What would you say about this place?"></textarea>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <h5>Place Details</h5>
+    <ul>
+      <li>Name:</li>
+      <li>Address:</li>
+      <li>City:</li>
+      <li>State:</li>
+      <li>Zip:</li>
+    </ul>
+  </div>
+</div>

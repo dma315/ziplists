@@ -1,0 +1,14 @@
+<div class="list-container">
+  <h3 class="center-header">Create a new list</h3>
+  <form action="/lists" method="post">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Chicago's Best Burgers" name="list[title]" aria-describedby="basic-addon2">
+      <span class="input-group-addon" id="basic-addon2">List title</span>
+    </div>
+    <div class="form-group">
+      <!-- <label for="comment">Comment:</label> -->
+      <textarea class="form-control" rows="5" placeholder="Description: This list is destined for great things"></textarea>
+    </div>
+  </form>
+  <a id="add-new-place" href="/places/new"><button class="btn btn-primary">Add a new place</button></a>
+</div>

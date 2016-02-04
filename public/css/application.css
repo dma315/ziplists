@@ -49,19 +49,17 @@ input {
 
 /* Link styling */
 
-/*.button-as-link, a:visited, a {
-  background-color: transparent;
-  text-decoration: none;
-  color: green;
-  border: none;
-  padding: 0px 5px;
-}*/
-
 .button-as-link:hover, a:hover {
   text-decoration: underline;
   opacity: 0.5;
 }
 
-.top-right {
-  float: right;
+.plus-minus-toggler {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+}
+
+.panel-heading {
+  position: relative;
 }

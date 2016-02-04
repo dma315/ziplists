@@ -10,5 +10,26 @@
       <textarea class="form-control" rows="3" placeholder="Description: This list is destined for great things"></textarea>
     </div>
   </form>
-  <a id="add-new-place" href="/places/new"><button class="btn btn-primary">Add a new place</button></a>
+
+  <button id="add-new-place" class="btn btn-primary">Add a new place</button>
+
+  <div id="new-place-form-container">
+    <div class="col-md-12">
+      <form action="/places" method="post">
+        <div class="input-group">
+          <input type="text" id="autocomplete" class="form-control" name="place[name]" aria-describedby="basic-addon2">
+          <span class="input-group-addon" id="basic-addon2">Search</span>
+        </div>
+        <div class="form-group">
+          <!-- <label for="comment">Comment:</label> -->
+          <textarea class="form-control" rows="4" id="comment" placeholder="What would you say about this place?"></textarea>
+        </div>
+      </form>
+    </div>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR_VqlNibuIv4AafIR-57abpvInGJOFFo 
+      &signed_in=true&libraries=places&callback=initService"
+      async defer></script>
+    <script src="/js/autocomplete.js"></script>
+  </div>
+
 </div>

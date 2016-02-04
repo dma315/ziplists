@@ -1,10 +1,9 @@
-Horse.delete_all
+User.destroy_all
+List.destroy_all
 
-Horse.create!(name: 'Penelope', breed: "Arabian", age: 15)
-Horse.create!(name: 'Pepe', breed: "Thoroughbred", age: 25)
-Horse.create!(name: 'Priscilla', breed: "Pony", age: 17)
-Horse.create!(name: 'Paula', breed: "Andalusian", age: 24)
-Horse.create!(name: 'Polly', breed: "Peruvian Paso", age: 10)
-Horse.create!(name: 'Pablo', breed: "Icelandic", age: 8)
+u = User.new(first_name: "David", last_name: "Ma", email: "dma315@gmail.com")
+u.password = "password"
+u.save
 
-
+l1 = List.create(title: "My list", creator: u, description: "Awesome list")
+l2 = List.create(title: "My other list", creator: u, description: "Really awesome list")

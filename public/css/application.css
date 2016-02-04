@@ -1,14 +1,14 @@
-body {
+.background-image {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../imgs/macaroons.jpg");
   background-size: cover;
 }
 
-/*.container {
+.list-container {
   margin: 20px auto;
   width: 800px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
-}*/
+  /*border: 1px dotted black;*/
+}
 
 .center-header {
   text-align: center;
@@ -49,13 +49,13 @@ input {
 
 /* Link styling */
 
-.button-as-link, a:visited, a {
+/*.button-as-link, a:visited, a {
   background-color: transparent;
   text-decoration: none;
   color: green;
   border: none;
   padding: 0px 5px;
-}
+}*/
 
 .button-as-link:hover, a:hover {
   text-decoration: underline;

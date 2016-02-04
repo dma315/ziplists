@@ -4,8 +4,11 @@ class User < ActiveRecord::Base
   
   include BCrypt
   
+  validates :first_name, :last_name, :email, presence: true
   validates :email, uniqueness: true
   validate :password_cannot_be_blank
+
+  has_many :created_lists, class_name: "List", foreign_key: :creator_id
 
   def password
     @password ||= Password.new(password_hash)

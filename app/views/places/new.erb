@@ -1,13 +1,52 @@
 <h3 class="center"><%= @list.title %></h3>
 <p class="center"><span class="author-name">by <a href="/users/<%= @list.creator_id %>"><%= @list.creator.full_name %></a></span></p>
 <p class="center"><%= @list.description %></p>
+
+
 <div id="new-place-form-container">
+
   <div class="col-md-12">
     <form action="/places" method="post">
+
       <div class="input-group">
-        <input type="text" id="autocomplete" class="form-control" name="place[name]" aria-describedby="basic-addon2">
+        <input type="text" id="autocomplete" class="form-control" aria-describedby="basic-addon2">
         <span class="input-group-addon" id="basic-addon2">Search for a place</span>
       </div>
+
+      <div class="place-preview">
+        <div class="input-group">
+          <input type="text" id="autocomplete" class="form-control" name="place[name]" aria-describedby="basic-addon2">
+          <span class="input-group-addon" id="basic-addon2">Name</span>
+        </div>
+
+        <div class="input-group">
+          <input type="text" id="autocomplete" class="form-control" name="place[address]" aria-describedby="basic-addon2">
+          <span class="input-group-addon" id="basic-addon2">Address</span>
+
+          <input type="text" id="autocomplete" class="form-control" name="place[neighborhood]" aria-describedby="basic-addon2">
+          <span class="input-group-addon" id="basic-addon2">Neighborhood</span>
+        </div>
+
+        <div class="input-group">
+          <input type="text" id="autocomplete" class="form-control" name="place[city]" aria-describedby="basic-addon2">
+          <span class="input-group-addon" id="basic-addon2">City</span>
+
+          <input type="text" id="autocomplete" class="form-control" name="place[state]" aria-describedby="basic-addon2">
+          <span class="input-group-addon" id="basic-addon2">State</span>
+
+          <input type="text" id="autocomplete" class="form-control" name="place[zip]" aria-describedby="basic-addon2">
+          <span class="input-group-addon" id="basic-addon2">Zip</span>
+        </div>
+
+        <div class="input-group">
+          <input type="text" id="autocomplete" class="form-control" name="place[phone_number]" aria-describedby="basic-addon2">
+          <span class="input-group-addon" id="basic-addon2">Phone Number</span>
+
+          <input type="text" id="autocomplete" class="form-control" name="place[website]" aria-describedby="basic-addon2">
+          <span class="input-group-addon" id="basic-addon2">Website</span>
+        </div>
+      </div>
+
       <div class="form-group">
         <!-- <label for="comment">Comment:</label> -->
         <textarea class="form-control" rows="4" id="comment" placeholder="What would you say about this place?"></textarea>

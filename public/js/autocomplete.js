@@ -11,6 +11,8 @@ function initService() {
 function getPlaceDetails() {
   var place = autocomplete.getPlace()
   var clean_place_object = compileCleanAddressObject(place)
+  generatePlacePreview(clean_place_object);
+  $('.place-preview').show()
   console.log(clean_place_object)
 };
 
@@ -31,6 +33,20 @@ function compileCleanAddressObject(google_place_object) {
   clean_object['neighborhood'] = place.neighborhood || ''
 
   return clean_object
+}
+
+function generatePlacePreview(clean_place_object) {
+  var place = clean_place_object || {}
+  $('input[name="place[name]"]').val(place.name)
+
+  var address = place.street_number + " " + place.route
+  $('input[name="place[address]"]').val(address)
+  $('input[name="place[city]"]').val(place.locality)
+  $('input[name="place[state]"]').val(place.administrative_area_level_1)
+  $('input[name="place[zip]"]').val(place.postal_code)
+  $('input[name="place[neighborhood]"]').val(place.neighborhood)
+  $('input[name="place[phone_number]"]').val(place.phone_number)
+  $('input[name="place[website]"]').val(place.website)
 }
 
 // // Maurice's example on callbacks

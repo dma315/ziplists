@@ -72,3 +72,9 @@ input {
 .author-name {
   font-size: 0.8em;
 }
+
+/* Places form */
+
+.place-preview {
+  display: none;
+}

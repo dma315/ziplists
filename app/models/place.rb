@@ -1,3 +1,4 @@
 class Place < ActiveRecord::Base
-  # Remember to create a migration!
+  has_many :lists_places
+  has_many :lists, through: :lists_places
 end

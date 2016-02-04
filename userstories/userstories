@@ -1,0 +1,18 @@
+As a user...
+  I'd like to create an account
+    ...with an email
+    ...with Facebook
+  Login to the site
+    ...with an email
+    ...with Facebook
+
+As a user, I'd like to 
+  Create a list of "wishes"
+  View my lists
+  Invite friends to my list
+  Accept an invite to a list
+
+As a list item, I'd like to
+  Get my information from Google places
+  Autopopulate to the database with that information
+  Link to Yelp / Google

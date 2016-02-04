@@ -1,0 +1,12 @@
+<div class="col-md-4" id="user-form-container">
+  <h3 class="center-header">Register</h3>
+  <%= erb :_errors, locals: {errors: @errors} %>
+  <form action="/users" method="post">
+    <label class="user-form" for="first_name">First Name: </label>
+    <input class="user-form" type="text" name="user[first_name]" placeholder="First Name">
+    <label class="user-form" for="last_name">Last Name: </label>
+    <input class="user-form" type="text" name="user[last_name]" placeholder="Last Name">
+    <%= erb :'users/_form' %>
+    <button type="submit" class="btn btn-default user-form">Register</button>
+  </form>
+</div>

@@ -1,0 +1,59 @@
+/* Display Properties */
+
+.block {
+  display: block;
+}
+
+.inline {
+  display: inline;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.wide-90 {
+  width: 90%;
+}
+
+.margin-5 {
+  margin: 5px;
+}
+
+.pad-10 {
+  padding: 10px;
+}
+
+.pad-5 {
+  padding: 5px;
+}
+
+/* Border properties */
+
+.border-radius-5 {
+  border-radius: 5px;
+}
+
+.border-black {
+  border: 1px solid black;
+}
+
+/* Position properties */
+
+.center {
+  margin: 10px auto;
+}
+
+.no-float {
+  float: none;
+}
+
+/* Font properties */
+
+.bold {
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}

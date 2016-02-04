@@ -1,0 +1,52 @@
+.container {
+  margin: 20px auto;
+  width: 800px;
+  padding: 0px 20px 20px 20px;
+  /*border: 1px dotted black;*/
+}
+
+.center-header {
+  text-align: center;
+  margin: 10px;
+}
+
+/* User forms */
+
+#user-form-container {
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  float: none;
+}
+
+.user-form {
+  display: block;
+  margin: 5px;
+  width: 95%;
+}
+
+/* Input */
+
+input {
+  padding: 5px;
+}
+
+/* Link styling */
+
+.button-as-link, a:visited, a {
+  background-color: transparent;
+  text-decoration: none;
+  color: green;
+  border: none;
+  padding: 0px 5px;
+}
+
+.button-as-link:hover, a:hover {
+  text-decoration: underline;
+  opacity: 0.5;
+}
+
+.top-right {
+  float: right;
+}

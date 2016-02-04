@@ -27,4 +27,8 @@ class User < ActiveRecord::Base
   def authenticate(entered_password)
     self.password == entered_password
   end
+
+  def full_name
+    return self.first_name + " " + self.last_name
+  end
 end

@@ -1,8 +1,51 @@
 function initService() {
 
   var input = document.getElementById('autocomplete')
-  var service = new google.maps.places.Autocomplete(input);
-  
+  autocomplete = new google.maps.places.Autocomplete(input);
+
+  autocomplete.addListener('place_changed', getPlaceDetails)
+
+
 };
 
+function getPlaceDetails() {
+  var place = autocomplete.getPlace()
+  var clean_place_object = compileCleanAddressObject(place)
+  console.log(clean_place_object)
+};
 
+function compileCleanAddressObject(google_place_object) {
+
+  var clean_object = {}
+  var place = google_place_object
+
+  for (var i = 0; i < place.address_components.length; i++) {
+    var addressType = place.address_components[i].types[0]
+    clean_object[addressType] = place.address_components[i].short_name
+  }
+  clean_object['google_id'] = place.place_id
+  clean_object['phone_number'] = place.formatted_phone_number || ''
+  clean_object['name'] = place.name || ''
+  clean_object['maps_url'] = place.url || ''
+  clean_object['website'] = place.website || ''
+  clean_object['neighborhood'] = place.neighborhood || ''
+
+  return clean_object
+}
+
+// // Maurice's example on callbacks
+
+// var array = [1,2,3,4,5]
+
+// var times2 = function (num) { 
+//   return num * 2;
+// }
+
+// array.map(times2)
+
+// Array.prototype.map(func) {
+//   for (var index = 0; index < this.length; index++) {
+//     var element = this[index];
+//     func.call(null, element);
+//   }
+// }

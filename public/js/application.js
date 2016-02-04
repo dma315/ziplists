@@ -14,11 +14,4 @@ $(document).ready(function() {
     }
   });
 
-  $('.list-container').on('click', '#add-new-place', function(event) {
-    event.preventDefault();
-    $thisButton = $(this)
-    $thisButton.hide()
-    $('#new-place-form-container').show();
-  });
-
 });

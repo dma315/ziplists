@@ -10,7 +10,7 @@
   /*border: 1px dotted black;*/
 }
 
-.center-header {
+.center {
   text-align: center;
   margin: 10px;
 }
@@ -25,8 +25,8 @@
 }
 
 #new-place-form-container {
-  border-top: 1px solid lightgrey;
-  display: none;
+  width: 50%;
+  margin: 0 auto;
 }
 
 /* User forms */
@@ -67,4 +67,8 @@ input {
 
 .panel-heading {
   position: relative;
+}
+
+.author-name {
+  font-size: 0.8em;
 }

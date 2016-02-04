@@ -3,7 +3,7 @@
 </script>
 
 <div class="col-md-4" id="user-form-container">
-  <h3 class="center-header">Login</h3>
+  <h3 class="center">Login</h3>
   <%= erb :_errors, locals: {errors: @errors} %>
   <form action="/login" method="post">
     <%= erb :'users/_form' %>

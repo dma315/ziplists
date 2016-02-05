@@ -14,6 +14,7 @@ post '/lists/?' do
 end
 
 get '/lists/:id?' do
+  @list = List.find_by(id: params[:id])
   erb :'lists/show'
 end
 

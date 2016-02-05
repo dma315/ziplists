@@ -5,7 +5,10 @@ end
 
 post '/lists/:list_id/places/?' do
   list = List.find_by(id: params[:list_id])
-  place = Place.create(params[:place])
+  place = Place.find_by(google_id: params[:place][:google_id])
+  if !place
+    place = Place.create(params[:place])
+  end
   list.places << place
   redirect "/lists/#{list.id}/places/new"
 end

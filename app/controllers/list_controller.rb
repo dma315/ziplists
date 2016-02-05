@@ -36,3 +36,9 @@ put '/lists/:id/?' do
   redirect "/lists/#{@list.id}"
 end
 
+get '/lists/:id/delete/?' do
+  @list = List.find_by(id: params[:id])
+  @list.destroy
+  redirect '/lists'
+end
+

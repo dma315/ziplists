@@ -10,5 +10,6 @@ post '/lists/:list_id/places/?' do
     place = Place.create(params[:place])
   end
   list.places << place
+  list.lists_places.find_by(id: place.id).update_attributes(params[:lists_place])
   redirect "/lists/#{list.id}/places/new"
 end

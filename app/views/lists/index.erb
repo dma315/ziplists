@@ -11,11 +11,13 @@
             <h4 class="panel-title inline">
               <a href="/lists/<%= list.id %>"><%= list.title %></a>
             </h4>
-            <a class="plus-minus-toggler" data-toggle="collapse" data-parent="#accordion" href="#<%= list.id %>">
-              <button type="button" class="btn btn-default btn-sm">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-              </button>
-            </a>
+            <div class="panel-buttons">
+              <a class="plus-minus-toggler" data-toggle="collapse" data-parent="#accordion" href="#<%= list.id %>">
+                <button type="button" class="btn btn-default btn-sm">
+                  <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+                </button>
+              </a>
+            </div>
           </div>
           
         <div id="<%= list.id %>" class="panel-collapse collapse">

@@ -19,16 +19,37 @@ $(document).ready(function() {
 
 
   // Toggle + / - on accordion
-  $('.panel-group').on('click', '.btn-sm', function(event) {
-    $thisIcon = $(this).find('.glyphicon')
-    if ($thisIcon.attr('class') == "glyphicon glyphicon-plus") {
-      $('.glyphicon').removeClass("glyphicon-minus")
-      $('.glyphicon').addClass("glyphicon-plus")
-      $thisIcon.addClass("glyphicon-minus")  
+  $('.panel-group').on('click', '.plus-minus-toggler', function(event) {
+    var $togglers = $('.plus-minus-toggler').find('span')
+    var $thisIcon = $(this).find('span')
+
+    // Case 1:  If not collapsed (open), toggle class between the two, nothing else changes
+    // Case 2:  If collapsed (closed), set all others to down, set current to up
+
+    // if ($thisIcon.hasClass('glyphicon-chevron-down')) {
+    //   $togglers.removeClass()
+    //   $togglers.addClass('glyphicon glyphicon-chevron-down')
+    //   $thisIcon.addClass('glyphicon-chevron-up')
+    // }
+    
+    $togglers.removeClass('glyphicon-chevron-up')
+    if ($thisIcon.hasClass('glyphicon-chevron-down')) {
+      $togglers.addClass('glyphicon-chevron-down')
+      $thisIcon.removeClass()
+      $thisIcon.addClass('glyphicon glyphicon-chevron-up')
     } else {
-      $thisIcon.removeClass("glyphicon-minus")
-      $thisIcon.addClass("glyphicon-plus")
+      $thisIcon.toggleClass('glyphicon-chevron-up glyphicon-chevron-down') 
     }
+
+    // if ($thisIcon.attr('class') == "glyphicon glyphicon-chevron-down") {
+      // $('.plus-minus-toggler').find('.glyphicon').removeClass("glyphicon-chevron-down")
+      // $('.plus-minus-toggler').find('.glyphicon').addClass("glyphicon-chevron-down")
+      // $thisIcon.removeClass("glyphicon-chevron-down")
+      // $thisIcon.addClass("glyphicon-chevron-up")
+    // } else {
+      // $thisIcon.removeClass("glyphicon-chevron-up")
+      // $thisIcon.addClass("glyphicon-chevron-down")
+    // }
   });
 
   $('#add-place-form').on('submit', function(event) {

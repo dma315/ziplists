@@ -5,11 +5,23 @@
     <% if place.neighborhood != "" %>
         (<%= place.neighborhood %>)
     <% end %>
-    <a class="plus-minus-toggler" data-toggle="collapse" data-parent="#accordion" href="#<%= lists_place.id %>">
-      <button type="button" class="btn btn-default btn-sm">
-        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-      </button>
-    </a>
+    <div class="panel-buttons">
+      <a class="plus-minus-toggler" data-toggle="collapse" data-parent="#accordion" href="#<%= lists_place.id %>">
+        <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+        </button>
+      </a>
+      <a class="complete-item" href="/places/complete/<%= lists_place.id %>">
+        <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+        </button>
+      </a>
+      <a class="complete-item" href="/places/delete/<%= lists_place.id %>">
+        <button type="button" class="btn btn-default btn-sm">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+        </button>
+      </a>
+    </div>
   </div>
   <div id="<%= lists_place.id %>" class="panel-collapse collapse">
     <div class="panel-body">

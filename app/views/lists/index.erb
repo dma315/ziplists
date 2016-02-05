@@ -1,9 +1,8 @@
-<script>
-    $('body').attr('id','pizza')
-</script>
-
-<h3 class="center white">All Lists</h3>
 <div class="list-container">
+  <a href="/lists/new"><button class="btn btn-primary">Create a new list</button></a>
+
+  <h3 class="center white">All Lists</h3>
+
   <div class="panel-group" id="accordion">
     <% @lists.each do |list| %>
       <div class="panel panel-default">

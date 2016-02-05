@@ -1,12 +1,7 @@
-#macaroons {
+/*#macaroons {
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../imgs/macaroons.jpg");
   background-size: cover;
-}
-
-#pizza {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../imgs/pizza.jpg");
-  background-size: cover; 
-}
+}*/
 
 .list-container {
   margin: 20px auto;

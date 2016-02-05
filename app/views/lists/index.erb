@@ -11,7 +11,8 @@
             <h4 class="panel-title inline">
               <a href="/lists/<%= list.id %>"><%= list.title %></a>
             </h4>
-            ( <%= list.lists_places.where(complete: true).count %>/<%= list.lists_places.count %> completed)
+            (<%= list.lists_places.where(complete: true).count %>/<%= list.lists_places.count %> completed)
+            by <a href="/users/<%= list.creator_id %>"><%= list.creator.full_name %></a>
             <div class="panel-buttons">
               <a class="plus-minus-toggler" data-toggle="collapse" data-parent="#accordion" href="#<%= list.id %>">
                 <button type="button" class="btn btn-default btn-sm">

@@ -11,7 +11,7 @@
           <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
         </button>
       </a>
-      <% if current_user && current_user.id = lists_place.user_id %>
+      <% if current_user && current_user.id == lists_place.user_id %>
         <a class="complete-item" href="/lists_places/complete/<%= lists_place.id %>">
           <button type="button" class="btn btn-default btn-sm">
             <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>

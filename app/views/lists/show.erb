@@ -22,7 +22,7 @@
     <% end %>
   </div>
 
-  <% if current_user && current_user.id = @list.creator.id %>
+  <% if current_user && current_user.id == @list.creator.id %>
     <%= erb :'/places/_add_new_template' %>
   <% end %>
 

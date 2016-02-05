@@ -1,5 +1,9 @@
+<script>
+    $('body').attr('id','pizza')
+</script>
+
 <div class="list-container">
-  <h3 class="center"><%= @list.title %></h3>
+  <h3 class="center white"><%= @list.title %></h3>
 
   <div class="panel-group" id="accordion">
     <% @list.lists_places.each do |lists_place| %>

@@ -1,10 +1,10 @@
 <div class="panel panel-default single-place" data-id="<%= lists_place.id%>">
   <div class="panel-heading">
     <h4 class="panel-title inline"><%= place.name %>
-      <% if place.neighborhood != "" %>
-        (<%= place.neighborhood %>)
-      <% end %>
     </h4>
+    <% if place.neighborhood != "" %>
+        (<%= place.neighborhood %>)
+    <% end %>
     <a class="plus-minus-toggler" data-toggle="collapse" data-parent="#accordion" href="#<%= lists_place.id %>">
       <button type="button" class="btn btn-default btn-sm">
         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>

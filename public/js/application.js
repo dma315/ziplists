@@ -31,5 +31,21 @@ $(document).ready(function() {
     }
   });
 
+  $('#add-place-form').on('submit', function(event) {
+    event.preventDefault();
+    $this_form = $(this)
+    details = $(this).serialize();
+    console.log("button works!")
+    $.ajax({
+      method: $(this).attr('method'),
+      url: $(this).attr('action'),
+      data: details
+    })
+    .done(function(response) {
+      $('#accordion').append(response);
+      $this_form[0].reset();
+    })
+  });
+
 
 });

@@ -11,7 +11,7 @@ end
 post '/lists/?' do
   list = current_user.created_lists.new(params[:list])
   list.save
-  redirect "/lists/#{list.id}/places/new"
+  redirect "/lists/#{list.id}"
 end
 
 # before '/lists/*' do

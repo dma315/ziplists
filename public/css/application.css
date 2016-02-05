@@ -1,7 +1,6 @@
-/*#macaroons {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../imgs/macaroons.jpg");
-  background-size: cover;
-}*/
+body {
+  padding-bottom: 50px;
+}
 
 .list-container {
   margin: 20px auto;

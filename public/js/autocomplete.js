@@ -12,7 +12,7 @@ function getPlaceDetails() {
   var place = autocomplete.getPlace()
   var clean_place_object = compileCleanAddressObject(place)
   generatePlacePreview(clean_place_object);
-  $('.place-preview').show()
+  // $('.place-preview').show()
   console.log(place)
   console.log(clean_place_object)
 };

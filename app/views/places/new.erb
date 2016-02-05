@@ -1,81 +1,16 @@
+<!-- Not currently being used -->
+
 <div id="new-place-form-container">
 
   <div class="list-info white">
     <%= erb :'lists/_details', locals: {list: @list} %>
   </div>
 
-  <div class="col-md-12">
-    <form action="/lists/<%= @list.id %>/places" method="post">
+  <div class="panel-group" id="accordion">
+    <% @list.lists_places.each do |lists_place| %>
+      <% place = lists_place.place %>
+      <%= erb :'places/_place_template', locals: { place: place, lists_place: lists_place } %>
+    <% end %>
+  </div>  
 
-      <div class="input-group">
-        <input type="text" id="autocomplete" class="form-control" aria-describedby="basic-addon2">
-        <span class="input-group-addon" id="basic-addon2">Search for a place</span>
-      </div>
-
-      <div class="place-preview">
-        <div class="input-group">
-          <input type="text" id="autocomplete" class="form-control" name="place[name]" aria-describedby="basic-addon2">
-          <span class="input-group-addon" id="basic-addon2">Name</span>
-        </div>
-
-        <div class="input-group">
-          <input type="text" id="autocomplete" class="form-control" name="place[address]" aria-describedby="basic-addon2">
-          <span class="input-group-addon" id="basic-addon2">Address</span>
-
-          <input type="text" id="autocomplete" class="form-control" name="place[neighborhood]" aria-describedby="basic-addon2">
-          <span class="input-group-addon" id="basic-addon2">Neighborhood</span>
-        </div>
-
-        <div class="input-group">
-          <input type="text" id="autocomplete" class="form-control" name="place[city]" aria-describedby="basic-addon2">
-          <span class="input-group-addon" id="basic-addon2">City</span>
-
-          <input type="text" id="autocomplete" class="form-control" name="place[state]" aria-describedby="basic-addon2">
-          <span class="input-group-addon" id="basic-addon2">State</span>
-
-          <input type="text" id="autocomplete" class="form-control" name="place[zip]" aria-describedby="basic-addon2">
-          <span class="input-group-addon" id="basic-addon2">Zip</span>
-        </div>
-
-        <div class="input-group">
-          <input type="text" id="autocomplete" class="form-control" name="place[phone_number]" aria-describedby="basic-addon2">
-          <span class="input-group-addon" id="basic-addon2">Phone Number</span>
-
-          <input type="text" id="autocomplete" class="form-control" name="place[website]" aria-describedby="basic-addon2">
-          <span class="input-group-addon" id="basic-addon2">Website</span>
-        </div>
-
-        
-        <input type="hidden" name="place[google_id]" value="">
-        <input type="hidden" name="place[google_maps_url]" value="">
-      </div>
-
-      <div class="form-group">
-        <!-- <label for="comment">Comment:</label> -->
-        <textarea name="lists_place[description]" class="form-control" rows="4" id="comment" placeholder="What would you say about this place?"></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Add to list</button>
-    </form>
-  </div>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCR_VqlNibuIv4AafIR-57abpvInGJOFFo 
-  &signed_in=true&libraries=places&callback=initService"
-  async defer></script>
-  <script src="/js/autocomplete.js"></script>
-
-
-
-  <div class="list-current-places">
-  <% @list.places.each do |place| %>
-    <p><%= place.name %></p>
-    <ul>
-      <li><span class="bold">Address: </span><%= place.address %></li>
-      <li><span class="bold">City: </span><%= place.city %></li>
-      <li><span class="bold">State: </span><%= place.state %></li>
-      <li><span class="bold">Zip: </span><%= place.zip %></li>
-      <li><span class="bold">Neighborhood: </span><%= place.neighborhood %></li>
-      <li><span class="bold">Phone_number: </span><%= place.phone_number %></li>
-      <li><span class="bold">Website: </span><%= place.website %></li>
-    </ul>
-  <% end %>
-</div>
 </div>

@@ -19,6 +19,9 @@
         <p><span class="bold">Website: </span><a href="<%= place.website %>">Link to site</a></p>
       <% end %>
       <p><span class="bold">Link to Map: </span><a href="<%= place.google_maps_url %>">Link to Google Maps</a></p>
+      <% if lists_place.description != "" %>
+        <p><span class="bold">My notes: </span><%= lists_place.description %></p>
+      <% end %>
     </div>
   </div>
 </div>

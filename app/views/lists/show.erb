@@ -1,5 +1,5 @@
 <div class="list-container">
-  <% if current_user.id == @list.creator.id %>
+  <% if current_user && current_user.id == @list.creator.id %>
     <a href="/lists/<%= @list.id %>/edit"><button class="btn btn-primary">Edit list</button></a>
     <a href="/lists/<%= @list.id %>/delete"><button class="btn btn-primary">Delete list</button></a>
   <% end %>
@@ -13,6 +13,9 @@
       <%= erb :'places/_place_template', locals: { place: place, lists_place: lists_place } %>
     <% end %>
   </div>
+
+
+  <%= erb :'/places/_add_new_template' %>
 
 </div>
 

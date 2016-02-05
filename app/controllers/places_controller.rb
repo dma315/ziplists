@@ -1,7 +1,7 @@
-get '/lists/:list_id/places/new/?' do
-  @list = List.find_by(id: params[:list_id])
-  erb :'places/new'
-end
+# get '/lists/:list_id/places/new/?' do
+#   @list = List.find_by(id: params[:list_id])
+#   erb :'places/new'
+# end
 
 post '/lists/:list_id/places/?' do
   list = List.find_by(id: params[:list_id])
@@ -10,6 +10,13 @@ post '/lists/:list_id/places/?' do
     place = Place.create(params[:place])
   end
   list.places << place
-  list.lists_places.find_by(id: place.id).update_attributes(params[:lists_place])
-  redirect "/lists/#{list.id}/places/new"
+  lists_place = ListsPlace.find_by(place_id: place.id, list_id: params[:list_id])
+  lists_place.update_attributes(params[:lists_place])
+  
+  
+  if request.xhr?
+    erb :'places/_place_template', locals: {lists_place: lists_place, list: list, place: place}, layout: false
+  else
+    redirect "/lists/#{list.id}"
+  end 
 end

@@ -44,10 +44,22 @@ $(document).ready(function() {
       data: details
     })
     .done(function(response) {
-      $('#accordion').append(response);
+      $(response).hide().appendTo("#accordion").fadeIn();
       $this_form[0].reset();
     })
   });
 
-
+  $('.panel-group').on('click', '.delete-item', function(event) {
+    event.preventDefault();
+    $thisItem = $(this).closest('.panel')
+    $.ajax({
+      method: "GET",
+      url: $(this).attr('href')
+    })
+    .done(function(response) {
+      $thisItem.fadeOut(400, function() {
+        $(this).remove();
+      })
+    });
+  });
 });

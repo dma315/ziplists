@@ -2,11 +2,10 @@
 <p class="center"><span class="author-name">by <a href="/users/<%= @list.creator_id %>"><%= @list.creator.full_name %></a></span></p>
 <p class="center"><%= @list.description %></p>
 
-
 <div id="new-place-form-container">
 
   <div class="col-md-12">
-    <form action="/places" method="post">
+    <form action="/lists/<%= @list.id %>/places" method="post">
 
       <div class="input-group">
         <input type="text" id="autocomplete" class="form-control" aria-describedby="basic-addon2">
@@ -45,11 +44,15 @@
           <input type="text" id="autocomplete" class="form-control" name="place[website]" aria-describedby="basic-addon2">
           <span class="input-group-addon" id="basic-addon2">Website</span>
         </div>
+
+        
+        <input type="hidden" name="place[google_id]" value="">
+        <input type="hidden" name="place[google_maps_url]" value="">
       </div>
 
       <div class="form-group">
         <!-- <label for="comment">Comment:</label> -->
-        <textarea class="form-control" rows="4" id="comment" placeholder="What would you say about this place?"></textarea>
+        <textarea name="place[description]" class="form-control" rows="4" id="comment" placeholder="What would you say about this place?"></textarea>
       </div>
       <button type="submit" class="btn btn-primary">Add to list</button>
     </form>
@@ -58,4 +61,21 @@
   &signed_in=true&libraries=places&callback=initService"
   async defer></script>
   <script src="/js/autocomplete.js"></script>
+
+
+
+  <div class="list-current-places">
+  <% @list.places.each do |place| %>
+    <p><%= place.name %></p>
+    <ul>
+      <li><span class="bold">Address: </span><%= place.address %></li>
+      <li><span class="bold">City: </span><%= place.city %></li>
+      <li><span class="bold">State: </span><%= place.state %></li>
+      <li><span class="bold">Zip: </span><%= place.zip %></li>
+      <li><span class="bold">Neighborhood: </span><%= place.neighborhood %></li>
+      <li><span class="bold">Phone_number: </span><%= place.phone_number %></li>
+      <li><span class="bold">Website: </span><%= place.website %></li>
+    </ul>
+  <% end %>
+</div>
 </div>

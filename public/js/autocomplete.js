@@ -13,6 +13,7 @@ function getPlaceDetails() {
   var clean_place_object = compileCleanAddressObject(place)
   generatePlacePreview(clean_place_object);
   $('.place-preview').show()
+  console.log(place)
   console.log(clean_place_object)
 };
 
@@ -30,7 +31,6 @@ function compileCleanAddressObject(google_place_object) {
   clean_object['name'] = place.name || ''
   clean_object['maps_url'] = place.url || ''
   clean_object['website'] = place.website || ''
-  clean_object['neighborhood'] = place.neighborhood || ''
 
   return clean_object
 }
@@ -47,6 +47,8 @@ function generatePlacePreview(clean_place_object) {
   $('input[name="place[neighborhood]"]').val(place.neighborhood)
   $('input[name="place[phone_number]"]').val(place.phone_number)
   $('input[name="place[website]"]').val(place.website)
+  $('input[name="place[google_id]"]').val(place.google_id)
+  $('input[name="place[google_maps_url]"]').val(place.maps_url)
 }
 
 // // Maurice's example on callbacks

@@ -1,8 +1,8 @@
-<h3 class="center"><%= @list.title %></h3>
-<p class="center"><span class="author-name">by <a href="/users/<%= @list.creator_id %>"><%= @list.creator.full_name %></a></span></p>
-<p class="center"><%= @list.description %></p>
-
 <div id="new-place-form-container">
+
+  <div class="list-info white">
+    <%= erb :'lists/_details', locals: {list: @list} %>
+  </div>
 
   <div class="col-md-12">
     <form action="/lists/<%= @list.id %>/places" method="post">

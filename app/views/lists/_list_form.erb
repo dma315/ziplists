@@ -1,0 +1,8 @@
+<div class="input-group">
+  <input type="text" class="form-control" placeholder="Chicago's Best Burgers" name="list[title]" aria-describedby="basic-addon2" value="<%= list.try(:title) %>" >
+  <span class="input-group-addon" id="basic-addon2">List title</span>
+</div>
+<div class="form-group">
+  <!-- <label for="comment">Comment:</label> -->
+  <textarea class="form-control" rows="3" name="list[description]" placeholder="Description: This list is destined for great things"><%= list.try(:description)%></textarea>
+</div>

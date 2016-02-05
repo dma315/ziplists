@@ -1,9 +1,11 @@
-<script>
-    $('body').attr('id','pizza')
-</script>
-
 <div class="list-container">
-  <h3 class="center white"><%= @list.title %></h3>
+  <% if current_user.id == @list.creator.id %>
+    <a href="/lists/<%= @list.id %>/edit"><button class="btn btn-primary">Edit list</button></a>
+    <a href="/lists/<%= @list.id %>/delete"><button class="btn btn-primary">Delete list</button></a>
+  <% end %>
+  <div class="list-info white">
+    <%= erb :'lists/_details', locals: {list: @list} %>
+  </div>
 
   <div class="panel-group" id="accordion">
     <% @list.lists_places.each do |lists_place| %>

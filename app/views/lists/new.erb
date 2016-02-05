@@ -1,14 +1,8 @@
 <div class="list-container">
-  <h3 class="center">Create a new list</h3>
+  <h3 class="center white">Create a new list</h3>
   <form action="/lists" method="post">
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Chicago's Best Burgers" name="list[title]" aria-describedby="basic-addon2">
-      <span class="input-group-addon" id="basic-addon2">List title</span>
-    </div>
-    <div class="form-group">
-      <!-- <label for="comment">Comment:</label> -->
-      <textarea class="form-control" rows="3" name="list[description]" placeholder="Description: This list is destined for great things"></textarea>
-    </div>
+    
+    <%= erb :'lists/_list_form', locals: {list: @list} %>
     <button type="submit" class="btn btn-primary">Add some places >></button>
   </form>
 </div>

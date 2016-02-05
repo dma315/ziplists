@@ -8,7 +8,7 @@
   </div>
 
   <div class="panel-group" id="accordion">
-    <% @list.lists_places.each do |lists_place| %>
+    <% @lists_places.each do |lists_place| %>
       <% place = lists_place.place %>
       <%= erb :'places/_place_template', locals: { place: place, lists_place: lists_place } %>
     <% end %>

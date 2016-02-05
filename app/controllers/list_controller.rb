@@ -20,6 +20,11 @@ end
 
 get '/lists/:id/?' do
   @list = List.find_by(id: params[:id])
+  @lists_places = []
+  @list.lists_places.each do |lists_place|
+    @lists_places << lists_place
+  end
+  @lists_places.sort_by!{ |lists_place| [lists_place.complete.to_s, lists_place.place.name] }
   erb :'lists/show'
 end
 

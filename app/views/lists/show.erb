@@ -14,8 +14,9 @@
     <% end %>
   </div>
 
-
-  <%= erb :'/places/_add_new_template' %>
+  <% if current_user && current_user.id = @list.creator.id %>
+    <%= erb :'/places/_add_new_template' %>
+  <% end %>
 
 </div>
 

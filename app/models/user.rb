@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   validate :password_cannot_be_blank
 
   has_many :created_lists, class_name: "List", foreign_key: :creator_id
+  has_many :lists_places
 
   def password
     @password ||= Password.new(password_hash)

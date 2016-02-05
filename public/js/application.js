@@ -44,11 +44,12 @@ $(document).ready(function() {
       data: details
     })
     .done(function(response) {
-      $(response).hide().appendTo("#accordion").fadeIn();
+      $(response).hide().appendTo(".panel-group").fadeIn();
       $this_form[0].reset();
     })
   });
 
+  // Remove item from list
   $('.panel-group').on('click', '.delete-item', function(event) {
     event.preventDefault();
     $thisItem = $(this).closest('.panel')
@@ -62,4 +63,20 @@ $(document).ready(function() {
       })
     });
   });
+
+  // Complete item from list
+  $('.panel-group').on('click', '.complete-item', function(event) {
+    event.preventDefault();
+    $thisItem = $(this).closest('.panel')
+    $.ajax({
+      method: "GET",
+      url: $(this).attr('href')
+    })
+    .done(function(response) {
+      $thisItem.removeClass("panel-default")
+      $thisItem.addClass("panel-success")
+      $thisItem.hide().appendTo('.panel-group').fadeIn();
+    });
+  })
+
 });

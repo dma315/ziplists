@@ -67,7 +67,7 @@ $(document).ready(function() {
   // Complete item from list
   $('.panel-group').on('click', '.complete-item', function(event) {
     event.preventDefault();
-    $thisItem = $(this).closest('.panel')
+    var $thisItem = $(this).closest('.panel')
     $.ajax({
       method: "GET",
       url: $(this).attr('href')
@@ -77,6 +77,22 @@ $(document).ready(function() {
       $thisItem.addClass("panel-success")
       $thisItem.hide().appendTo('.panel-group').fadeIn();
     });
+  })
+
+  $('#filter-buttons').on('click', 'button', function(event) {
+    event.preventDefault();
+    var filterMethod = $(this).attr('id')
+    console.log(filterMethod)
+
+    if (filterMethod == "filter-complete") {
+      $('.panel-success').show();
+      $('.panel-default').hide();
+    } else if (filterMethod == "filter-incomplete") {
+      $('.panel-success').hide();
+      $('.panel-default').show();
+    } else if (filterMethod == "filter-all") {
+      $('.panel').show();
+    };
   })
 
 });

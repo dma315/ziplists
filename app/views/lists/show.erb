@@ -7,6 +7,17 @@
     <%= erb :'lists/_details', locals: {list: @list} %>
   </div>
 
+  <div class="center">
+    <div class="center white">
+      Filter
+    </div>
+    <div id="filter-buttons" class="btn-group" role="group">
+      <button id="filter-complete" type="button" class="btn btn-default">Completed</button>
+      <button id="filter-all" type="button" class="btn btn-default">All</button>
+      <button id="filter-incomplete" type="button" class="btn btn-default">Incomplete</button>
+    </div>
+  </div>
+
   <div class="panel-group" id="accordion">
     <% @lists_places.each do |lists_place| %>
       <% place = lists_place.place %>
